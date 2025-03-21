@@ -9,17 +9,15 @@ const TextEditor: React.FC = () => {
   const editor = useEditor({
     extensions: [
       StarterKit,
-      Placeholder.configure({
-        placeholder: "Write your email here...",
-      }),
+      Placeholder.configure({ placeholder: "Write your email here..." }),
       VariableExtension,
     ],
-    content: "<p>Hello {{fullname}}, welcome!</p>",
+    content: "<p>Hello {{user_name}}, welcome!</p>",
   });
 
   const insertVariable = (variable: string) => {
     if (!editor) return;
-    editor.chain().focus().insertVariable(variable).run();
+    editor.chain().focus().insertContent({ type: "variable", attrs: { variable } }).run();
   };
 
   return (

@@ -18,9 +18,12 @@ export const VariableExtension = Node.create({
     return [
       {
         tag: "span[data-variable]",
-        getAttrs: (element) => ({
-          variable: (element as HTMLElement).getAttribute("data-variable"),
-        }),
+        getAttrs: (element: unknown) => {
+          if (element instanceof HTMLElement) {
+            return { variable: element.getAttribute("data-variable") };
+          }
+          return false;
+        },
       },
     ];
   },
@@ -37,13 +40,12 @@ export const VariableExtension = Node.create({
   },
 
   addCommands() {
-    return (editor) => ({
-      insertVariable: (variable: string) => {
-        return editor.chain().focus().insertContent({
-          type: "variable",
-          attrs: { variable },
-        }).run();
-      },
-    });
+    return {
+      insertVariable:
+        (variable: string) =>
+        ({ chain }) => {
+          return chain().focus().insertContent(`<span data-variable="${variable}">{{${variable}}}</span>`).run();
+        },
+    };
   },
 });

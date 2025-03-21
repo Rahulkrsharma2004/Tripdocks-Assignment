@@ -10,7 +10,7 @@ const TextEditor: React.FC = () => {
     extensions: [
       StarterKit,
       Placeholder.configure({
-        placeholder: "Write your email here...",
+        placeholder: "✍️ Start typing your email here...",
       }),
       VariableExtension,
     ],
@@ -23,10 +23,16 @@ const TextEditor: React.FC = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto mt-10 p-4 border border-gray-300 rounded-lg bg-white">
-      <h2 className="text-lg font-semibold mb-2">Email Template Editor</h2>
-      <VariablePopover onSelect={insertVariable} />
-      <EditorContent editor={editor} className="border p-3 rounded-md" />
+    <div className="max-w-3xl mx-auto mt-10 p-6 border border-gray-300 rounded-xl bg-white shadow-lg">
+      <h2 className="text-xl font-bold mb-4 text-gray-700">📧 Email Template Editor</h2>
+      
+      <div className="mb-3">
+        <VariablePopover onSelect={insertVariable} />
+      </div>
+
+      <div className="border border-gray-300 p-4 rounded-lg bg-gray-50 focus-within:ring-2 focus-within:ring-blue-400 transition">
+        <EditorContent editor={editor} />
+      </div>
     </div>
   );
 };

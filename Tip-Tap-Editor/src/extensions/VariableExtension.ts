@@ -33,7 +33,7 @@ export const VariableExtension = Node.create({
       "span",
       {
         "data-variable": node.attrs.variable,
-        class: "bg-yellow-200 px-1 rounded-md",
+        class: "bg-yellow-200 px-1 rounded-md font-semibold text-blue-600",
       },
       `{{${node.attrs.variable}}}`,
     ];
@@ -43,8 +43,11 @@ export const VariableExtension = Node.create({
     return {
       insertVariable:
         (variable: string) =>
-        ({ chain }) => {
-          return chain().focus().insertContent(`<span data-variable="${variable}">{{${variable}}}</span>`).run();
+        ({ commands }) => {
+          return commands.insertContent({
+            type: "variable",
+            attrs: { variable },
+          });
         },
     };
   },

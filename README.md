@@ -2,6 +2,12 @@
 
 This project is a **React-based rich text editor** built using **TipTap**, with support for inserting predefined **custom variables** dynamically. The editor provides a seamless text-editing experience with rich formatting options and an intuitive variable insertion system.
 
+# Image
+![Screenshot (174)](https://github.com/user-attachments/assets/0a9a02c3-9ad3-478e-8a49-0ec01b5ab9a4)
+![Screenshot (173)](https://github.com/user-attachments/assets/50ad077c-ff6f-48be-920d-d9731f40bf3b)
+![Screenshot (172)](https://github.com/user-attachments/assets/d07d7c81-a37d-49a8-9908-ab3014112b57)
+![Screenshot (175)](https://github.com/user-attachments/assets/a6cb5015-813a-4294-b0c7-ffe7cf5f4bb3)
+
 ## Features
 
 ✅ **Rich Text Editing** – Supports bold, italic, headings, lists, and more.  

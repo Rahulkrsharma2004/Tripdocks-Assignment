@@ -20,7 +20,6 @@ const VariablePopover: React.FC<VariablePopoverProps> = ({ onSelect }) => {
     <div className="p-4 border border-gray-300 rounded-lg shadow-md bg-white">
       <p className="font-semibold text-gray-700 mb-2">📌 Insert Variable:</p>
       
-      {/* Variable Buttons */}
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
         {VARIABLES.map((variable) => (
           <button

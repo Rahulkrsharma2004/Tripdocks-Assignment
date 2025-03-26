@@ -10,4 +10,15 @@ export default defineConfig({
       plugins: [tailwindcss(), autoprefixer()],
     },
   },
+  esbuild: {
+    logLevel: "silent", // Suppress warnings/errors
+  },
+  build: {
+    outDir: "dist",
+    sourcemap: true, // Useful for debugging in production
+  },
+  server: {
+    host: true, // Allow external access (if needed)
+    strictPort: true, // Prevent port conflicts
+  },
 });
